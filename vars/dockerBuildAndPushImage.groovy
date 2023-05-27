@@ -7,6 +7,7 @@ def call(Map config) {
   def dockerHubCredentialsId = config.dockerHubCredentialsId
 
   // Build Docker image
+  sh "ls -lrt"
   sh "docker build -t ${imageName}:${imageTag} ${dockerfileDir}"
 
   // Log in to Docker Hub
